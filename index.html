@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Countdown Timer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
+
+  <h1 class="text-4xl font-bold mb-6">Countdown Timer</h1>
+
+  <!-- Date/Time Picker -->
+  <div class="flex flex-wrap gap-2 mb-6 justify-center">
+    <input type="datetime-local" id="eventDateTime" class="form-control" />
+    <button id="startBtn" class="px-4 py-2 bg-green-500 text-white rounded">Start Countdown</button>
+  </div>
+
+  <!-- Countdown Display -->
+  <div id="countdown" class="flex flex-wrap justify-center gap-4 hidden">
+    <div class="time-card">
+      <div class="time-number" id="days">00</div>
+      <div class="time-label">Days</div>
+    </div>
+    <div class="time-card">
+      <div class="time-number" id="hours">00</div>
+      <div class="time-label">Hours</div>
+    </div>
+    <div class="time-card">
+      <div class="time-number" id="minutes">00</div>
+      <div class="time-label">Minutes</div>
+    </div>
+    <div class="time-card">
+      <div class="time-number" id="seconds">00</div>
+      <div class="time-label">Seconds</div>
+    </div>
+  </div>
+
+  <!-- Event Status -->
+  <div id="event-status" class="mt-4 text-lg font-semibold text-red-500 hidden">Event Live!</div>
+
+  <!-- Controls -->
+  <div class="mt-6 flex gap-4 hidden" id="controls">
+    <button id="pauseBtn" class="px-4 py-2 bg-blue-500 text-white rounded">Pause</button>
+    <button id="resumeBtn" class="px-4 py-2 bg-purple-500 text-white rounded">Resume</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
